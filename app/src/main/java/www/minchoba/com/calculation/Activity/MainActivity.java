@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import www.minchoba.com.calculation.Listener.OnBtnClickListener;
+import www.minchoba.com.calculation.Listener.OnBtnClickListener; // Listener를 가져와서 연결.
 
 import www.minchoba.com.calculation.R;
 

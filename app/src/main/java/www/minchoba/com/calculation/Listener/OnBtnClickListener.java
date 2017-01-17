@@ -18,11 +18,11 @@ public class OnBtnClickListener implements View.OnClickListener { // 1. class를
     public static final int BTN_SUM = -3;
     public static final int BTN_SUB = -4;
     public static final int BTN_TIMES = -5;
-    public static final int BTN_EQUAL = -6;
+    public static final int BTN_EQUAL = -6; // 상수를 선언하여 키워드 생성 (가동성 up)
 
     private Context context;
     private TextView resTextView;
-    private static StringBuilder sb;
+    private static StringBuilder sb;  // String을 여러개 연결.
 
     public OnBtnClickListener(Context context, TextView resTextView) { // findViewById는 activity에서만 사용 가능 하므로
                                                                 //TextView 인자를 생성해서 main으로 넘겨준다.
@@ -42,7 +42,7 @@ public class OnBtnClickListener implements View.OnClickListener { // 1. class를
             case BTN_AC:
 //                resTextView.setText("0");
 
-                sb = new StringBuilder();
+                sb = new StringBuilder(); //  case 별로 String Builder 객체 가져와야?..
                 sb.append("0");
                 break;
             case BTN_DIV:
@@ -83,7 +83,7 @@ public class OnBtnClickListener implements View.OnClickListener { // 1. class를
                 if(resTextView.getText().equals("0")){ // 만약 resTextView의 숫자가 0이었다면,
                     sb = new StringBuilder();
                     sb.append(String.valueOf(btn.getTag()));
-//                    resTextView.setText((String.valueOf(btn.getTag()))); // resTextView의 text를
+//                    resTextView.setText(String.valueOf(btn.getTag())); // resTextView의 text를
 //                                                                // 눌린 btn의 태그값을 String형으로 가져와서 바꾸어 setting.
                 }
                 else{
@@ -96,6 +96,6 @@ public class OnBtnClickListener implements View.OnClickListener { // 1. class를
                 break;
 
         }
-        resTextView.setText(sb.toString());
+        resTextView.setText(sb.toString()); // resTextView에 띄워줄 sb 내용을 String으로 변환해서 set
     }
 }
